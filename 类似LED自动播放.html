@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#xhqh{
+				width: 50%;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			#xhqh p{
+				width: 30%;
+				height: 30px;
+				line-height: 30px;
+				float: left;
+			}
+			.qimo8{ overflow:hidden; width:65%;float: left;}
+			.qimo8 .qimo {/*width:99999999px;*/width:8000%; height:30px;}
+			.qimo8 .qimo div{ float:left;}
+			.qimo8 .qimo ul{float:left; height:30px; overflow:hidden; zoom:1; }
+			.qimo8 .qimo ul li{float:left; line-height:30px; list-style:none;}
+			.qimo8 li a{margin-right:10px;color:white;}
+			.bg_grey{
+				width: 100%;
+				background: #313131;
+				color: white;
+				position: absolute;
+				left: 0;
+				bottom: 4.2%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bg_grey">
+			<div id="xhqh">
+				<p>当前已有45名业主报名</p>
+				<div id="demo" class="qimo8">
+					<div class="qimo">
+						<div id="demo1">
+							<ul>
+								<li>
+									<a>王先生 150xxxx3328</a>
+								</li>
+								<li>
+									<a>李小姐 130xxxx2645</a>
+								</li>
+								<li>
+									<a>郑先生 159xxxx2084</a>
+								</li>
+								<li>
+									<a>胡女士 138xxxx1584</a>
+								</li>
+								<li>
+									<a>吴女士 182xxxx0623</a>
+								</li>
+								<li>
+									<a>赵女士 177xxxx5349</a>
+								</li>
+								<li>
+									<a>林先生 182xxxx5797</a>
+								</li>
+								<li>
+									<a>张先生 155xxxx1457</a>
+								</li>
+							</ul>
+						</div>
+						<div id="demo2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var demo = document.getElementById("demo");
+		var demo1 = document.getElementById("demo1");
+		var demo2 = document.getElementById("demo2");
+		demo2.innerHTML = document.getElementById("demo1").innerHTML;
+
+		function Marquee() {
+			if(demo.scrollLeft - demo2.offsetWidth >= 0) {
+				demo.scrollLeft -= demo1.offsetWidth;
+			} else {
+				demo.scrollLeft++;
+			}
+		}
+		var myvar = setInterval(Marquee, 30);
+		demo.onmouseout = function() {
+			myvar = setInterval(Marquee, 30);
+		}
+		demo.onmouseover = function() {
+			clearInterval(myvar);
+		}
+	</script>
+</html>
