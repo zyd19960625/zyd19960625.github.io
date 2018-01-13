@@ -1,0 +1,126 @@
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>Bootstrap 实例 - 简单的轮播（Carousel）插件</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		/* tab套轮播 */
+		.lunbo1{width: 70%;margin: 0 auto;overflow: hidden;}
+		.lunbo1 ul li{width: 50%;float: left;text-align: center;height: 30px;line-height: 30px;background: black;color: white;list-style: none;}
+		.lunbo1 .slide{display: none;}
+		.lunbo1 .box .xs{display: block;}
+		.carousel-control img{width: 30px;height: 30px;}
+		.box .carousel-control{bottom: auto;top: 30%;background-image: none;width: 30px;}
+		
+		/* tab切换轮播 */
+		.cont li,.cont .carousel-indicators .active{float: left; color: white; border: none;outline: none;margin: 0; padding: 0; width: 33.3%;background: red; height: 50px;text-align: center;text-indent: 0;line-height: 46px;}
+		.cont .carousel-indicators{top: -70px;bottom: auto;}
+	</style>
+</head>
+<body>
+<!--tab切换套轮播-->
+<div class="lunbo1">
+	<ul>
+		<li>第一个</li>
+		<li>第二个</li>
+	</ul>
+	<div class="box">
+		<div id="myCarousel1" class="carousel slide xs">
+			<!-- 轮播（Carousel）项目 -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="img/lc2_03.jpg"/>
+				</div>
+				<div class="item">
+					<img src="img/lc3_03.jpg"/>
+				</div>
+				<div class="item">
+					<img src="img/lc5_03.jpg"/>
+				</div>
+			</div>
+			<!-- 轮播（Carousel）导航 -->
+			<a class="carousel-control left" href="#myCarousel1" 
+			   data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right" href="#myCarousel1" 
+			   data-slide="next">&rsaquo;</a>
+		</div>
+		<div id="myCarousel2" class="carousel slide">
+			<!-- 轮播（Carousel）项目 -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="img/lc7_03.jpg"/>
+				</div>
+				<div class="item">
+					<img src="img/lc8_03.jpg"/>
+				</div>
+				<div class="item">
+					<img src="img/lc_03.jpg"/>
+				</div>
+			</div>
+			<!-- 轮播（Carousel）导航 -->
+			<a class="carousel-control left" href="#myCarousel2" data-slide="prev"><img src="img/9211615054baf6c456192144a64d2055.jpg"/></a>
+			<a class="carousel-control right" href="#myCarousel2" data-slide="next"><img src="img/63b7214f986b008dcf6a8dfa9da5e0b8.jpg"/></a>
+		</div>
+	</div>
+</div>
+ 
+ <!--tab切换按钮轮播-->
+ <div class="cont">
+	<div id="types" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li data-target="#types" data-slide-to="0" class="active">
+				第一个
+			</li>
+			<li data-target="#types" data-slide-to="1">
+				第二个
+			</li>
+			<li data-target="#types" data-slide-to="2">
+				第三个
+			</li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/d3c43d4ee947185fd6fac65a4cdd4506.jpg">
+			</div>
+			<div class="item">
+				<img src="img/df5ef62b3afe03252427448a82d05ff1.png">
+			</div>
+			<div class="item">
+				<img src="img/9211615054baf6c456192144a64d2055.jpg">
+			</div>
+		</div>
+	    <a class="carousel-control left" href="#types" data-slide="prev"></a>
+	    <a class="carousel-control right" href="#types" data-slide="next"></a>
+	</div>
+</div>	
+	
+	
+<!-- 基本的轮播 -->
+<div class="nom">
+	<div id="pt_slider" class="carousel slide">
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/d3c43d4ee947185fd6fac65a4cdd4506.jpg">
+			</div>
+			<div class="item">
+				<img src="img/df5ef62b3afe03252427448a82d05ff1.png">
+			</div>
+			<div class="item">
+				<img src="img/9211615054baf6c456192144a64d2055.jpg">
+			</div>
+		</div>
+	    <a class="carousel-control left" href="#pt_slider" data-slide="prev"></a>
+	    <a class="carousel-control right" href="#pt_slider" data-slide="next"></a>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+	$('.lunbo1>ul>li').click(function(){
+		$('.lunbo1 .slide').removeClass('xs');
+		$('.lunbo1 .slide:eq('+$(this).index()+')').addClass('xs');
+	})
+</script>
+</html>
